@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>All Trails</h1>
+  <hr>
+    <div *ngFor="let trail of _trails">
+      <a class="row trail-row" [routerLink]="['/detail', trail.id]">
+        <div class="col-xs-6">
+          {{trail.name}}
+        </div>
+        <div class="col-xs-6">
+          {{trail.location}}
+        </div>
+      </a>
+      <hr>
+    </div>
+</div>
