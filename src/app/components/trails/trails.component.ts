@@ -17,10 +17,11 @@ export class TrailsComponent implements OnInit {
 
   ngOnInit() {
     this.getTrails();
+    setTimeout(console.log(this._trails), 2000);
   }
 
   getTrails(): void {
-    this.trailService.getAllTrails().then(trails => this._trails = trails);
+    this.trailService.getAllTrails().then(trails => { this._trails = trails; console.log(this._trails); });
   }
 
 }

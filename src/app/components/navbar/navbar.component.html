@@ -15,11 +15,11 @@
 
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="nav navbar-nav">
-        <li><a (click)="_trailService.filter('all')">All</a></li>
-        <li><a (click)="_trailService.filter('completed')">Completed</a></li>
-        <li><a (click)="_trailService.filter('still to do')">Still to Do</a></li>
-        <li><a (click)="_trailService.filter('nh')">NH</a></li>
-        <li><a (click)="_trailService.filter('ri')">RI</a></li>
+        <li><a routerLink="/home" (click)="_trailService.filter('all')">All</a></li>
+        <li><a routerLink="/home" (click)="_trailService.filter('completed')">Completed</a></li>
+        <li><a routerLink="/home" (click)="_trailService.filter('still to do')">Still to Do</a></li>
+        <li><a routerLink="/home" (click)="_trailService.filter('nh')">NH</a></li>
+        <li><a routerLink="/home" (click)="_trailService.filter('ri')">RI</a></li>
         <li><a href="#">Add New</a></li>
       </ul>
     </div>

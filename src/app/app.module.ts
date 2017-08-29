@@ -1,10 +1,15 @@
+// Module imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule      } from '@angular/core';
 import { RouterModule  } from '@angular/router';
+import { HttpModule    } from '@angular/http';
+
+// Component imports
 import { AppComponent  } from './components/app/app.component';
 import { TrailsComponent } from './components/trails/trails.component';
 import { TrailDetailComponent } from './components/trail-detail/trail-detail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TrailService } from './components/trail-service/trail.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +20,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
 
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,7 +28,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
       { path: 'detail/:id', component: TrailDetailComponent }
     ])
   ],
-  providers: [],
+  providers: [ TrailService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

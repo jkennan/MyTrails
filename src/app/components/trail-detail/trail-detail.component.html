@@ -2,11 +2,177 @@
   <h1 class="text-center">
     Details for {{_trail.name}}
   </h1>
+<div class="col-md-4 col-xs-12">
+  <div class="panel-group">
 
-  <p>
-    <strong>Name:</strong> {{_trail.name}}
-  </p>
-  <p>
-    <strong>Location:</strong> {{_trail.location}}
-  </p>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Trail Information
+      </div>
+      
+      <div class="panel-body">
+        
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Name</strong>
+          </div>
+          <div class="col-xs-9">
+            {{_trail.name}}
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Type</strong>
+          </div>
+          <div class="col-xs-9">
+            {{_trail.type}}
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Length</strong> (mi.)
+          </div>
+          <div class="col-xs-9">
+            <!-- {{_trail.length}} -->
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Altitude Change</strong> (ft.)
+          </div>
+          <div class="col-xs-9">
+            <!-- {{_trail.altitudechg}} -->
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Rated Difficulty</strong>
+          </div>
+          <div class="col-xs-9">
+            <!-- {{_trail.difficulty}} -->
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Online Database</strong> (mi)
+          </div>
+          <div class="col-xs-9">
+            <!-- {{_trail.dblink}} -->
+            Coming soon
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Completed Hike Information
+      </div>
+      <div class="panel-body">
+        
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Completed</strong>
+          </div>
+          <div class="col-xs-9">
+            <!-- {{_trail.completeddate}} -->
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Duration</strong>
+          </div>
+          <div class="col-xs-9">
+            <!-- {{_trail.completedduration}} -->
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <strong>Runkeeper Event Link</strong>
+          </div>
+          <div class="col-xs-9">
+            <!-- {{_trail.completeddate}} -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div> <!-- Panel group -->
+
+</div>
+
+<div class="col-md-4 col-xs-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Location
+    </div>
+
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-3">
+          <strong>State</strong>
+        </div>
+        <div class="col-xs-9">
+          {{_trail.state}}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Trailhead Address</strong>
+        </div>
+        <div class="col-xs-12">
+          <!-- <p>{{_trail.streetaddress}}</p> -->
+          <!-- <p>{{_trail.city}}, {{_trail.state}} {{trail.zip}}</p> -->
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-3">
+          <strong>Accessible by RIPTA</strong>
+        </div>
+        <div class="col-xs-9">
+          {{_trail.ripta}}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>RIPTA Directions</strong>
+        </div>
+        <div class="col-xs-12">
+          Coming soon with Google Maps
+        </div>
+      </div>
+      <hr>
+      <div class="row">      
+        <div class="col-xs-12">
+          Map Overlay
+        </div>
+      </div>  
+
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 col-xs-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Photos
+    </div>
+    <div class="panel-body">
+      Photos will be here.
+    </div>
+  </div>
+</div>
 </div>

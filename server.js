@@ -1,8 +1,8 @@
 const express    = require('express');
 const path       = require('path');
-// const http       = require('http');
 const bodyParser = require('body-parser');
 const api        = require('./server/routes/api');
+const config     = require('./config');
 
 const app = express(); // CHANGE THIS LATER WHEN I MOVE TO IMPORTS
 
@@ -10,6 +10,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'dist'))); // 'dist' is produced by angular cli on ng build
+
+// Enable CORS
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // Set API routes
 app.use('/api', api);
@@ -21,9 +28,6 @@ app.get('*', (req, res) => {
 
 
 // Store port
-const port = process.env.PORT || '3000';
-app.set('port', port);
+app.set('port', config.port);
 
-// const server = http.createServer(app);
-
-/*server*/app.listen(port, () => console.log(`API running on localhost:${port}`));
+/*server*/app.listen(config.port, () => console.log(`API running on localhost:${config.port}`));

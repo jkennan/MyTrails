@@ -2,12 +2,15 @@
   <h1>All Trails</h1>
   <hr>
     <div *ngFor="let trail of _trails">
-      <a class="row trail-row" [routerLink]="['/detail', trail.id]">
-        <div class="col-xs-6">
-          {{trail.name}}
+      <a class="row trail-row" [routerLink]="['/detail', trail._id]">
+        <div class="col-xs-4">
+          {{ trail.name }}
         </div>
-        <div class="col-xs-6">
-          {{trail.location}}
+        <div class="col-xs-4">
+          {{ trail.state }}
+        </div>
+        <div class="col-xs-4">
+          {{ trail.ripta ? "RIPTA Accessible" : "Not accessible by RIPTA" }}
         </div>
       </a>
       <hr>

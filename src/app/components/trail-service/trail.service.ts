@@ -1,16 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Trail      } from '../trail';
 import { TRAILS     } from './mock-data';
+import { Http       } from '@angular/http';
+import { Headers    } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class TrailService {
 
+
+  constructor(
+    private _http: Http
+  ) { }
+
   getAllTrails(): Promise<Trail[]> {
-    return Promise.resolve(TRAILS);
+    return this._http.get('http://localhost:3000/api/alltrails')
+                     .toPromise()
+                     .then(response => 
+                       response.json().trails as Trail[]
+                     )
+                     .catch(this.handleError);
   }
 
-  getTrail(id: number): Promise<Trail> {
-    return this.getAllTrails().then(trails => trails.find(trail => trail.id === id));
+  getTrail(id: string): Promise<Trail> {
+    return this._http.get('http://localhost:3000/api/trails/' + id)
+               .toPromise()
+               .then(response => response.json() as Trail)
+               .catch(this.handleError);
   }
 
 
@@ -39,6 +55,12 @@ export class TrailService {
         //things
         break;
     }
+  }
+
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
   }
 
 }

@@ -22,7 +22,8 @@ export class TrailDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._route.paramMap.switchMap((params: ParamMap) => this._trailService.getTrail(+params.get('id')))
+    console.log("route is " + this._route);
+    this._route.paramMap.switchMap((params: ParamMap) => this._trailService.getTrail(params.get('id')))
                         .subscribe(trail => this._trail = trail);
   }
 
