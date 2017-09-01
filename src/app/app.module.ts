@@ -10,13 +10,15 @@ import { TrailsComponent } from './components/trails/trails.component';
 import { TrailDetailComponent } from './components/trail-detail/trail-detail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrailService } from './components/trail-service/trail.service';
+import { AddTrailComponent } from './add-trail/add-trail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrailsComponent,
     TrailDetailComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddTrailComponent
   ],
   imports: [
     BrowserModule,

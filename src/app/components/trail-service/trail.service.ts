@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Trail      } from '../trail';
-import { TRAILS     } from './mock-data';
+// import { TRAILS     } from './mock-data';
 import { Http       } from '@angular/http';
-import { Headers    } from '@angular/http';
+// import { Headers    } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
